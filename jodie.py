@@ -40,7 +40,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu
 num_interactions = len(user_sequence_id)
 num_users = len(user2id) 
 num_items = len(item2id) + 1 # one extra item for "none-of-these"
-num_features = len(feature_sequence[0])
+num_features = len(list(feature_sequence[0]))
 true_labels_ratio = len(y_true)/(1.0+sum(y_true)) # +1 in denominator in case there are no state change labels, which will throw an error. 
 print("*** Network statistics:\n  %d users\n  %d items\n  %d interactions\n  %d/%d true labels ***\n\n" % (num_users, num_items, num_interactions, sum(y_true), len(y_true)))
 
