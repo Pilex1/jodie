@@ -146,7 +146,7 @@ with trange(args.epochs) as progress_bar1:
                             tbatch_userids = torch.LongTensor(lib.current_tbatches_user[i]).cuda() # Recall "lib.current_tbatches_user[i]" has unique elements
                             tbatch_itemids = torch.LongTensor(lib.current_tbatches_item[i]).cuda() # Recall "lib.current_tbatches_item[i]" has unique elements
                             tbatch_interactionids = torch.LongTensor(lib.current_tbatches_interactionids[i]).cuda() 
-                            feature_tensor = Variable(torch.Tensor(lib.current_tbatches_feature[i].values()).cuda()) # Recall "lib.current_tbatches_feature[i]" is list of list, so "feature_tensor" is a 2-d tensor
+                            feature_tensor = Variable(torch.Tensor(lib.current_tbatches_feature[i]).cuda()) # Recall "lib.current_tbatches_feature[i]" is list of list, so "feature_tensor" is a 2-d tensor
                             user_timediffs_tensor = Variable(torch.Tensor(lib.current_tbatches_user_timediffs[i]).cuda()).unsqueeze(1)
                             item_timediffs_tensor = Variable(torch.Tensor(lib.current_tbatches_item_timediffs[i]).cuda()).unsqueeze(1)
                             tbatch_itemids_previous = torch.LongTensor(lib.current_tbatches_previous_item[i]).cuda()
