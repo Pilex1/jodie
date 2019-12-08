@@ -12,7 +12,7 @@ import operator
 import copy
 from collections import defaultdict
 import os, re
-import cPickle
+import _pickle as cPickle
 import argparse
 from sklearn.preprocessing import scale
 

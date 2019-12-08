@@ -15,7 +15,7 @@ import math, random
 import sys
 from collections import defaultdict
 import os
-import cPickle
+import _pickle as cPickle
 import gpustat
 from itertools import chain
 from tqdm import tqdm, trange, tqdm_notebook, tnrange
